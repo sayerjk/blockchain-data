@@ -1,29 +1,13 @@
-import psycopg2
-from enc import DecimalEncoder
-import json
+from near_functions import query_near_testnet, create_dictionary
 import datetime
 
 
-def create_dictionary(labels, vals):
-    results = {}
-    for key, value in zip(labels, vals):
-        results[key] = value
-    return results
+keys = ['emitted_for_receipt_id', 'emitted_at_block_timestamp',
+        'emitted_in_shard_id', 'emitted_index_of_event_entry_in_shard',
+        'emitted_index_of_event_entry_in_shard', 'emitted_by_contract_account_id',
+        'token_id', 'event_kind', 'token_old_owner_account_id', 'token_new_owner_account_id',
+        'token_authorized_account_id', 'event_memo']
 
-
-def query_near(sql_query: str) -> dict:
-    """Query NEAR blockchain based on sql_query() string input"""
-    # test NEAR Indexer database info
-    conn = psycopg2.connect(host="35.184.214.98",
-                            database="testnet_explorer",
-                            user="public_readonly",
-                            password="nearprotocol")
-    cur = conn.cursor()
-    cur.execute(sql_query)
-    return cur.fetchall()
-
-
-# below only for testing the above function. Sample sql query
 query = """SELECT emitted_for_receipt_id, emitted_at_block_timestamp, 
         emitted_in_shard_id, emitted_index_of_event_entry_in_shard,
         emitted_index_of_event_entry_in_shard, emitted_by_contract_account_id,
@@ -32,33 +16,19 @@ query = """SELECT emitted_for_receipt_id, emitted_at_block_timestamp,
         FROM assets__non_fungible_token_events
         LIMIT 1000;"""
 
-result = query_near(query)
-# print(result[0])
-# for i in result:
-#     print(i[0])
-
-keys = ['emitted_for_receipt_id', 'emitted_at_block_timestamp',
-        'emitted_in_shard_id', 'emitted_index_of_event_entry_in_shard',
-        'emitted_index_of_event_entry_in_shard', 'emitted_by_contract_account_id',
-        'token_id', 'event_kind', 'token_old_owner_account_id', 'token_new_owner_account_id',
-        'token_authorized_account_id', 'event_memo']
-
+result = query_near_testnet(query)
 all_results = []
 
 for item in result:
-    rec = create_dictionary(keys, list(item))
-    all_results.append(rec)
+    record = create_dictionary(keys, list(item))
+    all_results.append(record)
 
 for item in all_results:
     if 'emitted_at_block_timestamp' in item.keys():
+        # converting epoch time to datetime string
         x = str(item['emitted_at_block_timestamp'])
         mod_string = x[:10]
-        z = datetime.datetime.fromtimestamp(int(mod_string)).strftime('%Y-%m-%d %H:%M:%S')
-        item['emitted_at_block_timestamp'] = z
-
-now = datetime.datetime.now()
-timestamp = datetime.datetime.timestamp(now)
-with open(f'data/NEAR_{timestamp}.json', 'w', encoding='utf-8') as f:
-    json.dump(all_results, f, ensure_ascii=False, indent=4, cls=DecimalEncoder)
+        datetime_string = datetime.datetime.fromtimestamp(int(mod_string)).strftime('%Y-%m-%d %H:%M:%S')
+        item['emitted_at_block_timestamp'] = datetime_string
 
 print(all_results)
