@@ -1,0 +1,7 @@
+.ipynb_checkpoints
+data
+notebooks
+notes
+psycopg2_aws_installation
+venv
+.idea
