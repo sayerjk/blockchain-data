@@ -2,7 +2,6 @@ import psycopg2
 from enc import DecimalEncoder
 import json
 import datetime
-from datetime import date
 
 
 def create_dictionary(labels, vals):
@@ -25,9 +24,13 @@ def query_near(sql_query: str) -> dict:
 
 
 # below only for testing the above function. Sample sql query
-query = """select *
-            FROM assets__non_fungible_token_events
-            LIMIT 500;"""
+query = """SELECT emitted_for_receipt_id, emitted_at_block_timestamp, 
+        emitted_in_shard_id, emitted_index_of_event_entry_in_shard,
+        emitted_index_of_event_entry_in_shard, emitted_by_contract_account_id,
+        token_id, event_kind, token_old_owner_account_id, token_new_owner_account_id,
+        token_authorized_account_id, event_memo
+        FROM assets__non_fungible_token_events
+        LIMIT 1000;"""
 
 result = query_near(query)
 # print(result[0])
@@ -49,8 +52,9 @@ for item in result:
 for item in all_results:
     if 'emitted_at_block_timestamp' in item.keys():
         x = str(item['emitted_at_block_timestamp'])
-        item['emitted_at_block_timestamp'] = date.fromtimestamp(int(x) // 1000000000)
-        item['emitted_at_block_timestamp'] = item['emitted_at_block_timestamp'].strftime('%Y-%m-%d %H:%M:%S')
+        mod_string = x[:10]
+        z = datetime.datetime.fromtimestamp(int(mod_string)).strftime('%Y-%m-%d %H:%M:%S')
+        item['emitted_at_block_timestamp'] = z
 
 now = datetime.datetime.now()
 timestamp = datetime.datetime.timestamp(now)
