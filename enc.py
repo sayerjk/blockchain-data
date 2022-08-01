@@ -1,5 +1,5 @@
 import json
-from decimal import *
+from decimal import Decimal
 from datetime import date
 
 
