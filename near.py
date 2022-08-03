@@ -1,13 +1,8 @@
 from near_functions import query_near_testnet
 
-query = """SELECT emitted_by_contract_account_id,
-        token_id
+query = """SELECT emitted_by_contract_account_id, token_id
         FROM assets__non_fungible_token_events
         LIMIT 1;"""
 
 results = query_near_testnet(query)
 print(results)
-print()
-print(results[0]['token_id'])
-print(results[0]['emitted_by_contract_account_id'])
-print(r"test this \backslash")
