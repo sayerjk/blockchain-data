@@ -9,6 +9,8 @@ KEYS = ['emitted_for_receipt_id', 'emitted_at_block_timestamp',
         'token_id', 'event_kind', 'token_old_owner_account_id', 'token_new_owner_account_id',
         'token_authorized_account_id', 'event_memo']
 
+NEW_KEYS = ['emitted_by_contract_account_id', 'token_id']
+
 
 class DecimalEncoder(json.JSONEncoder):
     """Converts Decimal() objects to string, allowing JSON storage"""
@@ -38,11 +40,11 @@ def query_near_testnet(sql_query: str) -> list[dict]:
     all_results = []
 
     for item in result_tuples:
-        record = create_dictionary(KEYS, list(item))
+        record = create_dictionary(NEW_KEYS, list(item))
         all_results.append(record)
 
     for item in all_results:
-        if 'emitted_at_block_timestamp' in item.keys():
+        if 'emitted_at_block_timestamp' in item.keys() and 'emitted_at_block_timestamp' in sql_query:
             # converting epoch time to datetime string
             x = str(item['emitted_at_block_timestamp'])
             mod_string = x[:10]
