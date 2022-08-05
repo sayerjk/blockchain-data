@@ -1,0 +1,170 @@
+{
+	'receipts_outcome': [{
+		'block_hash': 'EYu1nncntYbZy78ci8zi9FHot5Ls7jFh92guhNnGBYdz',
+		'id': '3Nk1zST5WLAZSfbzH7VaAdWjD85mtRLkwh97gwp1rBha',
+		'outcome': {
+			'executor_id': 'price-oracle-raw.nhtera.testnet',
+			'gas_burnt': 9762289346409,
+			'logs': [],
+			'metadata': {
+				'gas_profile': [{
+					'cost': 'BASE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '38126607984'
+				}, {
+					'cost': 'CONTRACT_LOADING_BASE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '35445963'
+				}, {
+					'cost': 'CONTRACT_LOADING_BYTES',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '49474704750'
+				}, {
+					'cost': 'READ_CACHED_TRIE_NODE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '2665320000000'
+				}, {
+					'cost': 'READ_MEMORY_BASE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '151372065600'
+				}, {
+					'cost': 'READ_MEMORY_BYTE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '5789430159'
+				}, {
+					'cost': 'READ_REGISTER_BASE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '118306763742'
+				}, {
+					'cost': 'READ_REGISTER_BYTE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '240392718'
+				}, {
+					'cost': 'STORAGE_READ_BASE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '1916132755500'
+				}, {
+					'cost': 'STORAGE_READ_KEY_BYTE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '19592953389'
+				}, {
+					'cost': 'STORAGE_READ_VALUE_BYTE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '5336065755'
+				}, {
+					'cost': 'STORAGE_WRITE_BASE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '770360832000'
+				}, {
+					'cost': 'STORAGE_WRITE_EVICTED_BYTE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '24890912925'
+				}, {
+					'cost': 'STORAGE_WRITE_KEY_BYTE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '8105529705'
+				}, {
+					'cost': 'STORAGE_WRITE_VALUE_BYTE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '24039367725'
+				}, {
+					'cost': 'TOUCHING_TRIE_NODE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '1014423223338'
+				}, {
+					'cost': 'WASM_INSTRUCTION',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '232505909064'
+				}, {
+					'cost': 'WRITE_MEMORY_BASE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '134582153328'
+				}, {
+					'cost': 'WRITE_MEMORY_BYTE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '6686860260'
+				}, {
+					'cost': 'WRITE_REGISTER_BASE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '137545079328'
+				}, {
+					'cost': 'WRITE_REGISTER_BYTE',
+					'cost_category': 'WASM_HOST_COST',
+					'gas_used': '9690186636'
+				}],
+				'version': 1
+			},
+			'receipt_ids': ['HGZHdGiP5eigUUreReW63GTkpLZqPNA1YDJUnwTvzXX1'],
+			'status': {
+				'SuccessValue': ''
+			},
+			'tokens_burnt': '976228934640900000000'
+		},
+		'proof': [{
+			'direction': 'Right',
+			'hash': 'Au4b8f2ZLYEdbWdPuo6NDYXoCNosEydvuL6t9ftvc81m'
+		}]
+	}, {
+		'block_hash': 'BMAs3f8FDgk9CdvYL9ijQP88L5oJFWnGRLBEEzbF5B6L',
+		'id': 'HGZHdGiP5eigUUreReW63GTkpLZqPNA1YDJUnwTvzXX1',
+		'outcome': {
+			'executor_id': 'priceoracle.nhtera.testnet',
+			'gas_burnt': 223182562500,
+			'logs': [],
+			'metadata': {
+				'gas_profile': [],
+				'version': 1
+			},
+			'receipt_ids': [],
+			'status': {
+				'SuccessValue': ''
+			},
+			'tokens_burnt': '0'
+		},
+		'proof': [{
+			'direction': 'Right',
+			'hash': '3kHKGfqqXbvAw2qazmvUnjZDHjmRZHoZ42oyfJZaUYrx'
+		}]
+	}],
+	'status': {
+		'SuccessValue': ''
+	},
+	'transaction': {
+		'actions': [{
+			'FunctionCall': {
+				'args': 'eyJwcmljZXMiOlt7ImFzc2V0X2lkIjoid3JhcC50ZXN0bmV0IiwicHJpY2UiOnsibXVsdGlwbGllciI6IjUxNDA1IiwiZGVjaW1hbHMiOjI4fX0seyJhc3NldF9pZCI6ImF1cm9yYSIsInByaWNlIjp7Im11bHRpcGxpZXIiOiIxNzExODcwMCIsImRlY2ltYWxzIjoyMn19LHsiYXNzZXRfaWQiOiJ1c2R0LmZha2VzLnRlc3RuZXQiLCJwcmljZSI6eyJtdWx0aXBsaWVyIjoiMTAwMDIiLCJkZWNpbWFscyI6MTB9fSx7ImFzc2V0X2lkIjoidXNkYy5mYWtlcy50ZXN0bmV0IiwicHJpY2UiOnsibXVsdGlwbGllciI6IjEwMDAwIiwiZGVjaW1hbHMiOjEwfX0seyJhc3NldF9pZCI6ImRhaS5mYWtlcy50ZXN0bmV0IiwicHJpY2UiOnsibXVsdGlwbGllciI6Ijk5OTgiLCJkZWNpbWFscyI6MjJ9fSx7ImFzc2V0X2lkIjoid2J0Yy5mYWtlcy50ZXN0bmV0IiwicHJpY2UiOnsibXVsdGlwbGllciI6IjIzMjEzMjA1MCIsImRlY2ltYWxzIjoxMn19LHsiYXNzZXRfaWQiOiJhdXJvcmEuZmFrZXMudGVzdG5ldCIsInByaWNlIjp7Im11bHRpcGxpZXIiOiIxODExNSIsImRlY2ltYWxzIjoyMn19LHsiYXNzZXRfaWQiOiJ3ZXRoLmZha2VzLnRlc3RuZXQiLCJwcmljZSI6eyJtdWx0aXBsaWVyIjoiMTcxMTg3MDAiLCJkZWNpbWFscyI6MjJ9fSx7ImFzc2V0X2lkIjoidXNkbi50ZXN0bmV0IiwicHJpY2UiOnsibXVsdGlwbGllciI6Ijk5ODUiLCJkZWNpbWFscyI6MjJ9fSx7ImFzc2V0X2lkIjoiZnQubmVhcmxlbmQtb2ZmaWNpYWwudGVzdG5ldCIsInByaWNlIjp7Im11bHRpcGxpZXIiOiIzMTE0MiIsImRlY2ltYWxzIjoyMn19XX0=',
+				'deposit': '0',
+				'gas': 50000000000000,
+				'method_name': 'report_prices'
+			}
+		}],
+		'hash': 'BkPbqf4jR9BYpSYAy47ZsYPNA9vjc6CmHJLqRKz4zHac',
+		'nonce': 90560727154985,
+		'public_key': 'ed25519:EXYdTCvMaqfP6hYSypVdxJqWmU3LNRJoUSjCJRPz6VRB',
+		'receiver_id': 'price-oracle-raw.nhtera.testnet',
+		'signature': 'ed25519:27kQkEE8WQcfdG3J5UZGWSgvxMFEph4jjYFD1UwNaSvYAMxQKjcUKHQ9NGnBKsL9cYKU1jxhQxoWEar3hHbnbVHL',
+		'signer_id': 'priceoracle.nhtera.testnet'
+	},
+	'transaction_outcome': {
+		'block_hash': '4FXr3YGPVy2HFiofrNbdBNZJHBFJ5cTTQXHnmC3Gi4bY',
+		'id': 'BkPbqf4jR9BYpSYAy47ZsYPNA9vjc6CmHJLqRKz4zHac',
+		'outcome': {
+			'executor_id': 'priceoracle.nhtera.testnet',
+			'gas_burnt': 2429732106540,
+			'logs': [],
+			'metadata': {
+				'gas_profile': None,
+				'version': 1
+			},
+			'receipt_ids': ['3Nk1zST5WLAZSfbzH7VaAdWjD85mtRLkwh97gwp1rBha'],
+			'status': {
+				'SuccessReceiptId': '3Nk1zST5WLAZSfbzH7VaAdWjD85mtRLkwh97gwp1rBha'
+			},
+			'tokens_burnt': '242973210654000000000'
+		},
+		'proof': [{
+			'direction': 'Right',
+			'hash': 'GfcAMUoCsUXwsiHZckuX9dEarMjnq6FGq5VfZxXfzBkm'
+		}]
+	}
+}
