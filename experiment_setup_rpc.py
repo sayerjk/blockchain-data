@@ -12,3 +12,8 @@ block = near_provider.get_block(
     "HYJXpq9SmHg4SskZaXdNQkzjnYpD9wmrmNX2ZH87ZFJk"
 )
 print(block)
+
+s = 'HszoeEzYx8R5WaFcfSFVeK353TNtrWNibvJ2sMaiytC'
+
+vals = near_provider.get_validators()
+print(vals)
